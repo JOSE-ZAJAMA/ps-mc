@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve's Survival Routine by José Zajama</title>
+  <meta name="description" content="Minecraft, present simple. Sitio educativo de José Zajama, docente freelance.">
+  <meta name="author" content="José Zajama">
+  <meta property="og:title" content="José Zajama – MC">
+  <meta property="og:description" content="Minecraft, English, project.">
+  <meta property="og:image" content="https://jose-zajama.github.io/toe/images/toe-preview-site.jpg">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div style="text-align:center; margin-top:20px;">
+    <img src="assets/avatar-mc.png" style="width:120px; image-rendering:auto;" alt="avatar">
+    <div style="margin-top:10px;">
+      <button id="welcomeBtn" style="padding:6px 14px; font-size:14px;">▶ play welcome</button>
+      <audio id="welcomeAudio" src="assets/audios/mc-welcome.mp3"></audio>
+    </div>
+  </div>
+
+  <h1>Welcome, Adventurer!</h1>
+  <h3>Let's learn about Steve's routines in Minecraft.</h3>
+  <p class="mensaje-importante">
+    Use the code  <strong class="palabra-clave">start</strong>  to open the first chest.<br>
+    Write down all the <i>codes</i> you find.<br>
+    When you open all the chests, you’ll get a surprise!
+  </p>
+
+  <div class="grid" id="mural">
+    <!-- Cofres generados dinámicamente -->
+  </div>
+
+  <h3 class="mensaje-final">Enter the 6 numbers to claim your reward!</h3>
+
+  <div id="cofre-final" class="final-flex">
+    <div class="cofre especial">
+      <!-- RECORDATORIO: este div queda vacío
+       porque el cofre final LO GENERA JAVASCRIPT dinámicamente.
+       Si vas a reutilizar este mini sitio en el futuro:
+       revisar script.js → función cargarCofres() -->
+    </div>    
+  </div>
+
+  <div id="modal" class="modal">
+    <button onclick="cerrarModal()">Close</button>
+    <div id="contenido"></div>
+  </div>
+
+  <div style="margin-top: 30px;">
+    <button onclick="reiniciar()">Reset Adventure</button>
+  </div>
+
+  <div id="fireworks"></div>
+
+  <footer style="margin-top:40px; text-align:center; font-size:12px; opacity: 0.9;">
+    <a href="https://jose-zajama.github.io/toe/" target="_blank" style="color:inherit;">Get in touch!</a>
+    <span id="year"></span> © José Zajama
+  </footer>
+  
+  <script src="script.js"></script>  
+
+  <script>
+    // audio
+    const audio = document.getElementById("welcomeAudio");
+    const btn = document.getElementById("welcomeBtn");
+    btn.addEventListener("click", ()=>{
+      if(audio.paused){
+        audio.play();
+        btn.textContent = "⏸ pause welcome";
+      } else {
+        audio.pause();
+        btn.textContent = "▶ play welcome";
+      }
+    });
+
+    // año auto en footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+</body>
+
+
+</html>

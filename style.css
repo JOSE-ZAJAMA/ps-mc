@@ -1,0 +1,164 @@
+body {
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  background-image: url('assets/fondo-pixelado.jpg');
+  background-repeat: repeat;
+  text-align: center;
+  color: white;
+}
+
+.mensaje-importante {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  color: #ffffff;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* palabra 'start' */
+.palabra-clave {
+  font-size: 35px;
+  color: #fdfdfd;               /* verde brillante tipo Minecraft */
+  text-shadow: 0 0 8px #ffaaaa; /* efecto de brillo suave */
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* al pasar el mouse */
+.palabra-clave:hover {
+  text-shadow: 0 0 15px #00ffcc;
+  color: #aaffff;
+  cursor: default; /* no parece clicable */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.cofre {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.cofre img {
+  width: 100px;
+}
+
+/* Cofre final centrado y separado */
+#cofre-final-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Estilo especial del cofre final */
+.cofre.especial {
+  background-color: #222;
+  border: 3px solid #aaffff;    /* gold anterior */
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;          /* se adapta al contenedor */
+  max-width: 200px;     /* nunca se va a pasar de 300px */
+  text-align: center;
+  margin: 0 auto 20px auto;
+}
+
+.cofre.especial img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Botón estilo Minecraft */
+button {
+  background-color: #8B4513;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  border: 2px solid #000;
+  padding: 10px 15px;
+  box-shadow: 2px 2px #333;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #A0522D;
+}
+
+/* Animación de brillo para cofre final desbloqueado */
+@keyframes brillar {
+  0% { box-shadow: 0 0 5px #aaffff; }   /* gold anterior */
+  50% { box-shadow: 0 0 20px #aaffff; }    /* gold anterior */
+  100% { box-shadow: 0 0 5px #aaffff; }    /* gold anterior */
+}
+
+.cofre.especial.unlocked {
+  animation: brillar 1.5s infinite;
+}
+
+#cofre-final {
+  display: block;
+  width: 100%;
+}
+
+
+.final-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;  /* espacio entre cofre y texto */
+}
+
+
+#fireworks {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("assets/cofres/fireworks.gif"); /* un gif de fuegos artificiales */
+  background-size: cover;
+  z-index: 9999;
+}
+
+.imgRecurso {
+  width: 450px;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
+/* Mantendrá la fuente del documento */
+a.enlace-personalizado {
+  color: #fdec04;             /* Texto blanco */
+  text-decoration: none;    /* Quita el subrayado */
+  font-size: 1.4em;         /* Un poco más grande que el texto normal */
+  transition: color 0.3s;   /* Transición suave al pasar el mouse */
+}
+
+/* Efecto hover (al pasar el mouse) */
+a.enlace-personalizado:hover {
+  color: #04fd04;              /* Gris claro o el color que prefieras */
+  text-decoration: underline; /* O podrías mantenerlo sin subrayar */
+}
